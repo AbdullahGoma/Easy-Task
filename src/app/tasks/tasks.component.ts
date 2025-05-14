@@ -40,4 +40,11 @@ export class TasksComponent {
   get selectedUserTask() {
     return this.tasks.filter((task) => task.userId === this.userId)
   }
+
+  onCompletedTask(id: string) {
+    const index = this.tasks.findIndex((task) => task.id === id);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
 }
